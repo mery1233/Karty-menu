@@ -1,0 +1,201 @@
+{
+	"info": {
+		"_postman_id": "ce99dd7d-d1e6-46f6-9bb1-ac80226ea118",
+		"name": "Karty Menu",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "Menu creation",
+			"request": {
+				"auth": {
+					"type": "basic",
+					"basic": [
+						{
+							"key": "password",
+							"value": "{{password}}",
+							"type": "string"
+						},
+						{
+							"key": "username",
+							"value": "{{email}}",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"name\":\"Lala\",\n    \"description\":\"menu śniadaniowe\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{url}}/menu",
+					"host": [
+						"{{url}}"
+					],
+					"path": [
+						"menu"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Meal creation",
+			"request": {
+				"auth": {
+					"type": "basic",
+					"basic": [
+						{
+							"key": "password",
+							"value": "{{password}}",
+							"type": "string"
+						},
+						{
+							"key": "username",
+							"value": "{{email}}",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"name\":\"tosty\",\n    \"description\":\"z masłem\",\n    \"price\":4.34,\n    \"time\":3,\n    \"vege\":true\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{url}}/menu/1/meals",
+					"host": [
+						"{{url}}"
+					],
+					"path": [
+						"menu",
+						"1",
+						"meals"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "User signup",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"email\":\"{{email}}\",\n    \"password\":\"{{password}}\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{url}}/signup",
+					"host": [
+						"{{url}}"
+					],
+					"path": [
+						"signup"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Meal update",
+			"request": {
+				"auth": {
+					"type": "basic",
+					"basic": [
+						{
+							"key": "password",
+							"value": "{{password}}",
+							"type": "string"
+						},
+						{
+							"key": "username",
+							"value": "{{email}}",
+							"type": "string"
+						}
+					]
+				},
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"name\":\"zapiekanka\",\n    \"description\":\"z pieczarkami\",\n    \"price\":5.55,\n    \"time\":4,\n    \"vege\":true\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{url}}/meal/1",
+					"host": [
+						"{{url}}"
+					],
+					"path": [
+						"meal",
+						"1"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Menu list",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{url}}/menu/?byName=asc&byMealCount=desc&name=u&createdBefore=2021-07-10&createdAfter=2021-07-10",
+					"host": [
+						"{{url}}"
+					],
+					"path": [
+						"menu",
+						""
+					],
+					"query": [
+						{
+							"key": "byName",
+							"value": "asc"
+						},
+						{
+							"key": "byMealCount",
+							"value": "desc"
+						},
+						{
+							"key": "name",
+							"value": "u"
+						},
+						{
+							"key": "createdBefore",
+							"value": "2021-07-10"
+						},
+						{
+							"key": "createdAfter",
+							"value": "2021-07-10"
+						}
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
